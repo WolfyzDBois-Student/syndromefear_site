@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'SixtyFour';
+    src: url('./ttf/Sixtyfour-Regular-VariableFont_BLED\,SCAN.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DejaVuCustom';
+    src: url('./ttf/DejaVuSansMono.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DejaVuCustomBold';
+    src: url('./ttf/DejaVuSansMono-Bold.ttf') format('truetype');
+}
