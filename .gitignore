@@ -24,3 +24,7 @@ pnpm-debug.log*
 
 # vscode
 .vscode/
+
+# Key
+deploy_key
+deploy_key.pub
