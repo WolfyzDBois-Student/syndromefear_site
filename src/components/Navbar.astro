@@ -1,0 +1,22 @@
+<nav class="bg-gray-800 text-white p-4 flex justify-between">
+    <div class="text-lg font-bold">Mon Site Astro</div>
+    <div class="hidden md:flex gap-4">
+      <a href="/">Accueil</a>
+      <a href="/equipe">Équipe</a>
+      <a href="/chronologie">Chronologie</a>
+      <a href="/telechargement">Téléchargement</a>
+      <a href="/lien">Lien</a>
+    </div>
+    <button class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+      ☰
+    </button>
+  </nav>
+  
+  <div id="mobileMenu" class="hidden bg-gray-700 text-white p-4">
+    <a href="/">Accueil</a><br>
+    <a href="/equipe">Équipe</a><br>
+    <a href="/chronologie">Chronologie</a><br>
+    <a href="/telechargement">Téléchargement</a><br>
+    <a href="/lien">Lien</a>
+  </div>
+  
