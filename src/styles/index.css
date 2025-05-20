@@ -5,7 +5,8 @@
     align-items: center;
     padding: 5%;
     gap: 5%;
-    min-height: calc(100vh - 300px); /* Ajuste à la navbar */
+    min-height: calc(100vh - 300px);
+    /* Ajuste à la navbar */
 }
 
 .synopsis {

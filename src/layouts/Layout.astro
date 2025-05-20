@@ -1,13 +1,18 @@
 ---
 const { title } = Astro.props;
-import Navbar from '../components/Navbar.astro';
+import Navbar from "../components/Navbar.astro";
 import "../styles/style.css";
 
 const isIndex = title === "Syndrome Fear";
 const currentPath = Astro.url.pathname;
-const basePath = currentPath.startsWith('/team') || currentPath.startsWith('/project') || currentPath.startsWith('/downloads') || currentPath.startsWith('/links') || currentPath.startsWith('/bug_report')
-  ? '../'
-  : './';
+const basePath =
+  currentPath.startsWith("/team") ||
+  currentPath.startsWith("/project") ||
+  currentPath.startsWith("/downloads") ||
+  currentPath.startsWith("/links") ||
+  currentPath.startsWith("/bug_report")
+    ? "../"
+    : "./";
 ---
 
 <html lang="fr">
