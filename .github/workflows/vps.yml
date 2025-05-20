@@ -1,20 +1,27 @@
 name: Déploiement FTP vers VPS
 
 on:
-  workflow_run:
-    workflows: ["deploy", "release"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
   deploy-to-vps:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Déployer vers syndromefear.wolfyz.fr
     runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Récupérer les sources
         uses: actions/checkout@v4
+
+      # (Optionnel) Build
+      # - name: 🛠️ Build du projet
+      #   run: |
+      #     npm ci
+      #     npm run build
+
+      - name: ⏳ Attendre 120 secondes
+        run: sleep 120
 
       - name: 🔧 Installer lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
