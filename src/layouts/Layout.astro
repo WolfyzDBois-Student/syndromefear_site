@@ -15,13 +15,13 @@ const isIndex = title === "Syndrome Fear";
     <!-- <link rel="stylesheet" href="./styles/index.css" /> -->
   </head>
 
+  <script src="./js/nav-toggle.js" defer></script>
+
+
   <body class={isIndex ? "index-page" : ""}>
     <Navbar isIndex={isIndex} />
     <main>
       <slot />
     </main>
-
-    <!-- ✅ Script unique et bien placé -->
-    <script src="./js/nav-toggle.js" defer></script>
   </body>
 </html>
