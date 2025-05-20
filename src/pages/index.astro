@@ -1,28 +1,29 @@
 ---
 import BaseLayout from '../layouts/Layout.astro';
-import Auto1 from '../assets/auto/auto1.png';
-import Auto2 from '../assets/auto/auto2.png';
+import "../styles/index.css";
 ---
 
+<!-- Chargement du script de galerie -->
 <script src="/js/galery.js" defer></script>
-<link rel="stylesheet" href="/styles/index.css">
 
 <BaseLayout title="Syndrome Fear">
   <main class="index-container">
+    <!-- Section gauche : texte -->
     <section class="synopsis">
       <h2>Synopsis</h2>
       <p class="synopsis-text">
         Vous vous réveillez dans une pièce vide et froide <br>
         Vous ne vous souvenez de rien dans les dernières 48 heures <br>
         Où êtes-vous ? Que s'est-il passé ? <br>
-        Devant vous, une porte, verrouillé ... <br>
+        Devant vous, une porte, verrouillée... <br>
       </p>
     </section>
 
+    <!-- Section droite : galerie -->
     <section class="gallery">
       <div class="gallery-wrapper">
-        <img class="gallery-image" src={Auto1.src} alt="Image 1" />
-        <img class="gallery-image hidden" src={Auto2.src} alt="Image 2" />
+        <img class="gallery-image" src="/auto/auto1.png" alt="Image 1" />
+        <img class="gallery-image hidden" src="/auto/auto2.png" alt="Image 2" />
       </div>
     </section>
   </main>
