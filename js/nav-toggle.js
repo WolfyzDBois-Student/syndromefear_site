@@ -1,5 +1,3 @@
-console.log("script nav-toggle chargé");
-
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.querySelector(".nav-toggle");
   const collapsedMenu = document.querySelector(".navbar-collapsed");
