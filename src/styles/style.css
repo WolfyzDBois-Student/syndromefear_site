@@ -319,7 +319,7 @@ iframe {
         display: none;
       }
       
-      .navbar-collapsed.open {
+    .navbar-collapsed.open {
         display: flex;
       }
       

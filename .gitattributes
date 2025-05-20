@@ -1,3 +1,5 @@
 public/downloads/build.zip filter=lfs diff=lfs merge=lfs -text
 dist/downloads/build.zip filter=lfs diff=lfs merge=lfs -text
 archive/dist/downloads/build.zip filter=lfs diff=lfs merge=lfs -text
+archive/v1/dist/downloads/build.zip filter=lfs diff=lfs merge=lfs -text
+archive/v1/public/downloads/build.zip filter=lfs diff=lfs merge=lfs -text

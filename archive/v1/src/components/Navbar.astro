@@ -1,0 +1,20 @@
+---
+const currentPath = Astro.url.pathname;
+const basePath = currentPath.startsWith('/team') || currentPath.startsWith('/project') || currentPath.startsWith('/downloads') || currentPath.startsWith('/links') || currentPath.startsWith('/bug_report')
+    ? '../'
+    : './';
+
+const navbarStyle = `background-image: url('${basePath}img/syndromefear.png');`;
+---
+
+<nav class="navbar" style={navbarStyle}>
+    <h1>Syndrome Fear</h1>
+    <ul class="navbar-menu">
+        <li><a href={`${basePath}index.html`} class="navbar-link">Accueil</a></li>
+        <li><a href={`${basePath}team/index.html`} class="navbar-link">Ctrl+Alt+Elite</a></li>
+        <li><a href={`${basePath}project/index.html`} class="navbar-link">Déroulement du projet</a></li>
+        <li><a href={`${basePath}downloads/index.html`} class="navbar-link">Téléchargements</a></li>
+        <li><a href={`${basePath}links/index.html`} class="navbar-link">Liens utiles</a></li>
+        <li><a href={`${basePath}bug_report/index.html`} class="navbar-link">Bug Report</a></li>
+    </ul>
+</nav>

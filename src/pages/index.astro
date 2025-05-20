@@ -3,8 +3,6 @@ import BaseLayout from '../layouts/Layout.astro';
 import "../styles/index.css";
 ---
 
-<script src="./js/galery.js" defer></script>
-
 <BaseLayout title="Syndrome Fear">
   <main class="index-container">
     <section class="synopsis">
@@ -14,7 +12,9 @@ import "../styles/index.css";
         Où êtes-vous ? Que s'est-il passé ? <br>
         Devant vous, une porte, verrouillée... <br>
         <br>
-        <a href="./downloads/build.zip" class="download-button" download><i>&#8681;</i>Télécharger le jeu</a>
+        <a href="./downloads/build.zip" class="download-button" download>
+          <i>&#8681;</i>Télécharger le jeu
+        </a>
       </p>
     </section>
 
@@ -25,4 +25,8 @@ import "../styles/index.css";
       </div>
     </section>
   </main>
+
+  <!-- Scripts chargés depuis /public/js/... -->
+  <script src="./js/galery.js" defer></script>
+  <script src="./js/nav-toggle.js" defer></script>
 </BaseLayout>
