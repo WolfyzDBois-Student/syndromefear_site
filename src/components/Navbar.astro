@@ -1,8 +1,5 @@
 ---
-const currentPath = Astro.url.pathname;
-const basePath = currentPath.startsWith('/team') || currentPath.startsWith('/project') || currentPath.startsWith('/downloads') || currentPath.startsWith('/links') || currentPath.startsWith('/bug_report')
-  ? '../'
-  : './';
+const { basePath } = Astro.props;
 
 const navbarStyle = `background-image: url('${basePath}img/syndromefear.png');`;
 ---

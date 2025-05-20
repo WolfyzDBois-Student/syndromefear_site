@@ -4,6 +4,10 @@ import Navbar from '../components/Navbar.astro';
 import "../styles/style.css";
 
 const isIndex = title === "Syndrome Fear";
+const currentPath = Astro.url.pathname;
+const basePath = currentPath.startsWith('/team') || currentPath.startsWith('/project') || currentPath.startsWith('/downloads') || currentPath.startsWith('/links') || currentPath.startsWith('/bug_report')
+  ? '../'
+  : './';
 ---
 
 <html lang="fr">
@@ -11,17 +15,15 @@ const isIndex = title === "Syndrome Fear";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="icon" href="./img/favicon.gif" />
-    <!-- <link rel="stylesheet" href="./styles/index.css" /> -->
+    <link rel="icon" href={`${basePath}img/favicon.gif`} />
   </head>
 
-  <script src="./js/nav-toggle.js" defer></script>
-
-
   <body class={isIndex ? "index-page" : ""}>
-    <Navbar isIndex={isIndex} />
+    <Navbar isIndex={isIndex} basePath={basePath} />
     <main>
       <slot />
     </main>
+
+    <script src={`${basePath}js/nav-toggle.js`} defer></script>
   </body>
 </html>
