@@ -1,48 +1,29 @@
-@font-face {
-    font-family: 'SixtyFour';
-    src: url('../ttf/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'DejaVuCustom';
-    src: url('../ttf/DejaVuSansMono.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'DejaVuCustomBold';
-    src: url('../ttf/DejaVuSansMono-Bold.ttf') format('truetype');
-}
-
-
 body {
-    font-family: 'DejaVuCustom', sans-serif;
     background-color: #e6e6e6;
     color: #50606b;
     margin: 0;
     padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 h1 {
-    font-family: 'SixtyFour';
-    color: #e6e6e6;
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: left;
     margin-left: 3%;
 }
 
 h2 {
     color: #5d8aa8;
-    font-size: 1.5rem;
-    font-family: 'DejaVuCustomBold';
+    font-size: 2rem;
 }
 
 a {
-    font-family: 'DejaVuCustomBold';
     text-decoration: none;
     color: #7fb38c;
+    font-size: 1.1rem;
 }
 
-/* Navigation */
 .navbar {
     background-image: url('../img/syndromefear.png');
     background-size: cover;
@@ -53,6 +34,7 @@ a {
     max-height: 300px;
     z-index: 1000;
     margin: 0;
+    position: relative;
 }
 
 .navbar-menu {
@@ -60,13 +42,14 @@ a {
     display: flex;
     justify-content: center;
     gap: 20px;
-    font-family: 'DejaVuCustomBold';
+    padding: 0;
+    margin-top: 10px;
 }
 
 .navbar-link {
     color: white;
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     transition: color 0.3s;
 }
 
@@ -74,7 +57,37 @@ a {
     color: #ac00f0;
 }
 
-/* Contenu */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+.navbar-collapsed {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-collapsed .navbar-link {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
 .text {
     margin: 0 10%;
 }
@@ -95,21 +108,25 @@ a {
     border-radius: 10px;
 }
 
-/* Boutons de téléchargement */
-.download-button {
+.download-button,
+.download-button-coming-soon {
     display: inline-flex;
     align-items: center;
-    background-color: #7fb38c;
-    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
     margin-right: 10px;
     margin-bottom: 10px;
+    justify-content: center;
+}
+
+.download-button {
+    background-color: #7fb38c;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .download-button:hover {
@@ -117,26 +134,12 @@ a {
     transform: translateY(-2px);
 }
 
-.download-button i {
-    margin-right: 8px;
-}
-
 .download-button-coming-soon {
-    display: inline-flex;
-    align-items: center;
     background-color: #b1b1b1;
     color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
     cursor: not-allowed;
-    text-decoration: none;
-    margin-right: 10px;
-    margin-bottom: 10px;
 }
 
-/* Équipe */
 .team-pic {
     width: 50%;
     display: block;
@@ -151,7 +154,7 @@ a {
 
 .member-name {
     color: #758eaa;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
@@ -159,7 +162,6 @@ a {
     text-align: justify;
 }
 
-/* Timeline */
 .timeline {
     position: relative;
     margin: 50px auto;
@@ -172,6 +174,9 @@ a {
     position: relative;
     padding: 20px 20px 20px 40px;
     margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .timeline-marker {
@@ -195,21 +200,15 @@ a {
 
 .timeline-content h3 {
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: #8c92ac;
 }
 
 .timeline-content .date {
     display: block;
     margin-top: 10px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #999;
-}
-
-.timeline-item {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 @keyframes fadeInUp {
@@ -219,7 +218,6 @@ a {
     }
 }
 
-/* Table */
 table {
     border-collapse: collapse;
     width: auto;
@@ -247,21 +245,12 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
-/* footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #50606b;
-    color: white;
-    margin-top: 20px;
-} */
-
-/* Centrage iframe */
 iframe {
     align-items: center;
+    display: block;
+    margin: 0 auto;
 }
 
-
-/* Styles responsive pour les téléphones */
 @media screen and (max-width: 768px) {
     body {
         font-size: 16px;
@@ -275,25 +264,20 @@ iframe {
     }
 
     h2 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         text-align: center;
     }
 
-    .navbar ul{
-        background-size: cover;
-        padding: 200px 0;
-        max-height: 200px;
-    }
-
     .navbar-menu {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 0;
+        display: none;
     }
 
-    .navbar-link {
-        font-size: 1rem;
+    .navbar-collapsed {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
     }
 
     .text {
@@ -306,38 +290,18 @@ iframe {
         text-align: center;
     }
 
-    .textblock {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-
     .side-pic {
         max-width: 80%;
         margin: 0 auto;
-    }
-
-    .download-button,
-    .download-button-coming-soon {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
     }
 
     .team-pic {
         width: 80%;
     }
 
-    .member {
-        padding-bottom: 15px;
-    }
-
     .timeline {
         max-width: 90%;
         margin: 30px auto;
-    }
-
-    .timeline-item {
-        padding: 15px 15px 15px 30px;
     }
 
     .timeline-marker {
@@ -346,21 +310,17 @@ iframe {
         left: -8px;
     }
 
-    .timeline-content h3 {
-        font-size: 1.25rem;
-    }
-
     table {
         font-size: 16px;
         width: 100%;
     }
 
-    th, td {
-        padding: 6px;
-    }
-
-    footer {
-        text-align: center;
-        font-size: 14px;
-    }
+    .navbar-collapsed {
+        display: none;
+      }
+      
+      .navbar-collapsed.open {
+        display: flex;
+      }
+      
 }

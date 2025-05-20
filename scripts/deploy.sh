@@ -3,12 +3,6 @@
 echo "🚀 Build Astro site..."
 npm run build
 
-# Vérifie si Git LFS est installé
-if ! command -v git-lfs &> /dev/null; then
-  echo "❌ Git LFS is not installed. Please install it: https://git-lfs.github.com/"
-  exit 1
-fi
-
 # Initialise Git LFS si pas encore fait
 if [ ! -d ".git/lfs" ]; then
   echo "🔁 Initializing Git LFS..."
