@@ -6,8 +6,6 @@ import "../styles/style.css";
 const isIndex = title === "Syndrome Fear";
 ---
 
-<script src="./js/nav-toggle.js" defer></script>
-
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -22,5 +20,8 @@ const isIndex = title === "Syndrome Fear";
     <main>
       <slot />
     </main>
+
+    <!-- ✅ Script unique et bien placé -->
+    <script src="./js/nav-toggle.js" defer></script>
   </body>
 </html>
