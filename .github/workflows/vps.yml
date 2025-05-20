@@ -14,19 +14,13 @@ jobs:
       - name: 📥 Récupérer les sources
         uses: actions/checkout@v4
 
-      # (Optionnel) Build
-      # - name: 🛠️ Build du projet
-      #   run: |
-      #     npm ci
-      #     npm run build
-
       - name: ⏳ Attendre 120 secondes
         run: sleep 120
 
       - name: 🔧 Installer lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: 🧼 Supprimer l'ancien contenu du dossier distant
+      - name: 🧼 Supprimer l'ancien contenu du dossier distant (ou créer le dossier)
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
@@ -36,7 +30,9 @@ jobs:
           lftp -e "
             set ssl:verify-certificate no
             open -u $FTP_USER,$FTP_PASS $FTP_HOST
-            cls -1 $REMOTE_PATH | while read file; do rm -r $REMOTE_PATH/$file; done
+            mkdir -p $REMOTE_PATH
+            cd $REMOTE_PATH
+            glob -a rm -r *
             bye
           "
 
@@ -50,6 +46,7 @@ jobs:
           lftp -e "
             set ssl:verify-certificate no
             open -u $FTP_USER,$FTP_PASS $FTP_HOST
+            mkdir -p $REMOTE_PATH
             mirror --reverse --verbose ./dist $REMOTE_PATH
             bye
           "
