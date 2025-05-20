@@ -7,13 +7,14 @@ const isIndex = title === "Syndrome Fear";
 ---
 
 <script src="/js/nav-toggle.js" defer></script>
+<link rel="stylesheet" href="/styles/index.css" />
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <link rel="icon" href="/img/favicon.gif">
-    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body class={isIndex ? "index-page" : ""}>
     <Navbar isIndex={isIndex} />
