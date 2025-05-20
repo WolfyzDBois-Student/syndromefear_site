@@ -1,22 +1,20 @@
-<nav class="bg-gray-800 text-white p-4 flex justify-between">
-    <div class="text-lg font-bold">Mon Site Astro</div>
-    <div class="hidden md:flex gap-4">
-      <a href="/">Accueil</a>
-      <a href="/equipe">Équipe</a>
-      <a href="/chronologie">Chronologie</a>
-      <a href="/telechargement">Téléchargement</a>
-      <a href="/lien">Lien</a>
-    </div>
-    <button class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
-      ☰
-    </button>
-  </nav>
-  
-  <div id="mobileMenu" class="hidden bg-gray-700 text-white p-4">
-    <a href="/">Accueil</a><br>
-    <a href="/equipe">Équipe</a><br>
-    <a href="/chronologie">Chronologie</a><br>
-    <a href="/telechargement">Téléchargement</a><br>
-    <a href="/lien">Lien</a>
-  </div>
-  
+---
+const currentPath = Astro.url.pathname;
+const basePath = currentPath.startsWith('/team') || currentPath.startsWith('/project') || currentPath.startsWith('/downloads') || currentPath.startsWith('/links') || currentPath.startsWith('/bug_report')
+    ? '../'
+    : './';
+
+const navbarStyle = `background-image: url('${basePath}img/syndromefear.png');`;
+---
+
+<nav class="navbar" style={navbarStyle}>
+    <h1>Syndrome Fear</h1>
+    <ul class="navbar-menu">
+        <li><a href={`${basePath}index.html`} class="navbar-link">Accueil</a></li>
+        <li><a href={`${basePath}team/index.html`} class="navbar-link">Ctrl+Alt+Elite</a></li>
+        <li><a href={`${basePath}project/index.html`} class="navbar-link">Déroulement du projet</a></li>
+        <li><a href={`${basePath}downloads/index.html`} class="navbar-link">Téléchargements</a></li>
+        <li><a href={`${basePath}links/index.html`} class="navbar-link">Liens utiles</a></li>
+        <li><a href={`${basePath}bug_report/index.html`} class="navbar-link">Bug Report</a></li>
+    </ul>
+</nav>
