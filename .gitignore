@@ -27,4 +27,4 @@ pnpm-debug.log*
 
 # Key
 deploy_key
-deploy_key.pub
+# deploy_key.pub
