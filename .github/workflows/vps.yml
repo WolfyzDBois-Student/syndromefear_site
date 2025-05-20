@@ -1,0 +1,31 @@
+name: Déploiement vers le VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Déployer via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Récupérer les fichiers
+        uses: actions/checkout@v4
+
+      - name: 🔧 Installer l'outil FTP
+        run: sudo apt-get install -y lftp
+
+      - name: 🧼 Supprimer l'ancien contenu & 📤 Uploader le nouveau
+        env:
+            FTP_HOST: ${{ secrets.FTP_HOST }}
+            FTP_USER: ${{ secrets.FTP_USER }}
+            FTP_PASS: ${{ secrets.FTP_PASS }}
+            REMOTE_PATH: /home/u266426828/domains/wolfyz.fr/public_html/syndromefear
+        run: |
+          lftp -e "
+            open -u $FTP_USER,$FTP_PASS $FTP_HOST
+            mirror --reverse --delete --verbose ./dist $REMOTE_PATH
+            bye
+          "

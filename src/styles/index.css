@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Main layout container */
+/* === Main container: responsive layout === */
 .index-container {
   @apply flex flex-col md:flex-row items-start justify-between gap-8 p-6 md:p-12;
 }
 
-/* Synopsis section (left on desktop, top on mobile) */
+/* === Left section: Synopsis === */
 .synopsis {
   @apply w-full md:w-1/2;
 }
@@ -20,26 +20,24 @@
   @apply text-base sm:text-lg md:text-xl leading-relaxed text-justify;
 }
 
-/* Gallery section (right on desktop, bottom on mobile) */
+/* === Right section: Gallery === */
 .gallery {
   @apply w-full md:w-1/2 flex items-center justify-center;
 }
 
 .gallery-wrapper {
-  @apply relative w-full max-w-xl aspect-video overflow-hidden rounded-md shadow-md;
+  @apply relative w-full aspect-video overflow-hidden rounded-md shadow-md;
+}
+
+/* Responsive gallery max width handled via Tailwind utilities directly */
+.gallery-wrapper {
+  @apply max-w-xl sm:max-w-full;
 }
 
 .gallery-image {
-  @apply absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100;
+  @apply absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-100;
 }
 
 .gallery-image.hidden {
   @apply opacity-0 pointer-events-none;
-}
-
-/* Optional: fine-tuned image styling on small screens */
-@media (max-width: 640px) {
-  .gallery-wrapper {
-    @apply max-w-full;
-  }
 }
