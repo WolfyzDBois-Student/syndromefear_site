@@ -1,0 +1,50 @@
+name: 🚀 Déploiement auto
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 📥 Cloner le dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Important pour récupérer tous les tags
+
+      - name: 🔢 Générer le prochain tag (v1, v2, ...)
+        id: tag_step
+        run: |
+          last_tag=$(git tag --list 'v*' | sort -V | tail -n 1)
+          if [[ -z "$last_tag" ]]; then
+            next_tag="v1"
+          else
+            next_number=${last_tag#v}
+            next_number=$((next_number + 1))
+            next_tag="v$next_number"
+          fi
+          echo "next_tag=$next_tag" >> $GITHUB_OUTPUT
+
+      - name: 📦 Archiver le dossier dist
+        run: |
+          zip -r dist.zip dist
+
+      - name: 📌 Créer le tag
+        run: |
+          git tag ${{ steps.tag_step.outputs.next_tag }}
+          git push origin ${{ steps.tag_step.outputs.next_tag }}
+
+      - name: 🚀 Créer la release GitHub avec dist.zip
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag_step.outputs.next_tag }}
+          name: "Release ${{ steps.tag_step.outputs.next_tag }}"
+          body: "Déploiement automatique avec dist.zip"
+          files: dist.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
