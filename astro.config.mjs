@@ -3,6 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   /* base: '/syndromefear/', */
+  base: './',
   site: 'https://wolfyzdbois-student.github.io/syndromefear_site/',
   integrations: [tailwind()],
   outDir: './dist'

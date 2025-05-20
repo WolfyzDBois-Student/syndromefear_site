@@ -3,27 +3,25 @@ import BaseLayout from '../layouts/Layout.astro';
 import "../styles/index.css";
 ---
 
-<!-- Chargement du script de galerie -->
-<script src="/js/galery.js" defer></script>
+<script src="./js/galery.js" defer></script>
 
 <BaseLayout title="Syndrome Fear">
   <main class="index-container">
-    <!-- Section gauche : texte -->
     <section class="synopsis">
-      <h2>Synopsis</h2>
       <p class="synopsis-text">
         Vous vous réveillez dans une pièce vide et froide <br>
         Vous ne vous souvenez de rien dans les dernières 48 heures <br>
         Où êtes-vous ? Que s'est-il passé ? <br>
         Devant vous, une porte, verrouillée... <br>
+        <br>
+        <a href="./downloads/build.zip" class="download-button" download><i>&#8681;</i>Télécharger le jeu</a>
       </p>
     </section>
 
-    <!-- Section droite : galerie -->
     <section class="gallery">
       <div class="gallery-wrapper">
-        <img class="gallery-image" src="/auto/auto1.png" alt="Image 1" />
-        <img class="gallery-image hidden" src="/auto/auto2.png" alt="Image 2" />
+        <img class="gallery-image" src="./auto/auto1.png" alt="Image 1" />
+        <img class="gallery-image hidden" src="./auto/auto2.png" alt="Image 2" />
       </div>
     </section>
   </main>
