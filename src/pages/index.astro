@@ -20,13 +20,16 @@ import "../styles/index.css";
 
     <section class="gallery">
       <div class="gallery-wrapper">
-        <img class="gallery-image" src="./auto/auto1.png" alt="Image 1" />
-        <img class="gallery-image hidden" src="./auto/auto2.png" alt="Image 2" />
+        <div class="gallery-track">
+          <img class="gallery-image" src="./auto/auto1.png" alt="Image 1" />
+          <img class="gallery-image" src="./auto/auto2.png" alt="Image 2" />
+        </div>
+        <button class="gallery-btn prev">&#10094;</button>
+        <button class="gallery-btn next">&#10095;</button>
       </div>
     </section>
   </main>
 
-  <!-- Scripts chargés depuis /public/js/... -->
   <script src="./js/galery.js" defer></script>
   <script src="./js/nav-toggle.js" defer></script>
 </BaseLayout>
