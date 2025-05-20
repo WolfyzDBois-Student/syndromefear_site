@@ -1,31 +1,48 @@
-name: Déploiement vers le VPS
+name: Déploiement FTP vers VPS
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["deploy", "release"]
+    types:
+      - completed
 
 jobs:
-  deploy:
-    name: Déployer via FTP
+  deploy-to-vps:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    name: Déployer vers syndromefear.wolfyz.fr
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Récupérer les fichiers
+      - name: 📥 Récupérer les sources
         uses: actions/checkout@v4
 
-      - name: 🔧 Installer l'outil FTP
-        run: sudo apt-get install -y lftp
+      - name: 🔧 Installer lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: 🧼 Supprimer l'ancien contenu & 📤 Uploader le nouveau
+      - name: 🧼 Supprimer l'ancien contenu du dossier distant
         env:
-            FTP_HOST: ${{ secrets.FTP_HOST }}
-            FTP_USER: ${{ secrets.FTP_USER }}
-            FTP_PASS: ${{ secrets.FTP_PASS }}
-            REMOTE_PATH: /home/u266426828/domains/wolfyz.fr/public_html/syndromefear
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+          REMOTE_PATH: /home/u266426828/domains/wolfyz.fr/public_html/syndromefear
         run: |
           lftp -e "
+            set ssl:verify-certificate no
             open -u $FTP_USER,$FTP_PASS $FTP_HOST
-            mirror --reverse --delete --verbose ./dist $REMOTE_PATH
+            cls -1 $REMOTE_PATH | while read file; do rm -r $REMOTE_PATH/$file; done
+            bye
+          "
+
+      - name: 📤 Uploader le contenu de dist/ vers le VPS
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+          REMOTE_PATH: /home/u266426828/domains/wolfyz.fr/public_html/syndromefear
+        run: |
+          lftp -e "
+            set ssl:verify-certificate no
+            open -u $FTP_USER,$FTP_PASS $FTP_HOST
+            mirror --reverse --verbose ./dist $REMOTE_PATH
             bye
           "
