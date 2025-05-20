@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/Layout.astro';
-import "../styles/index.css";
+import Auto1 from '../assets/auto/auto1.png';
+import Auto2 from '../assets/auto/auto2.png';
 ---
 
 <script src="/js/galery.js" defer></script>
+<link rel="stylesheet" href="/styles/index.css">
 
 <BaseLayout title="Syndrome Fear">
   <main class="index-container">
@@ -19,8 +21,8 @@ import "../styles/index.css";
 
     <section class="gallery">
       <div class="gallery-wrapper">
-        <img class="gallery-image" src="/auto/auto1.png" alt="Image 1" />
-        <img class="gallery-image hidden" src="/auto/auto2.png" alt="Image 2" />
+        <img class="gallery-image" src={Auto1.src} alt="Image 1" />
+        <img class="gallery-image hidden" src={Auto2.src} alt="Image 2" />
       </div>
     </section>
   </main>
