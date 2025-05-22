@@ -1,9 +1,17 @@
 @font-face {
     font-family: 'MainFont';
-    src: url(../main.ttf') format('truetype');
+    src: url('/main.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
+
+@font-face {
+  font-family: 'TitleFont';
+  src: url('/title.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
   
   body {
     background-color: #000c1a;
@@ -21,10 +29,12 @@
   }
   
   h1 {
+    font-family: 'TitleFont', 'MainFont', sans-serif;
     font-size: 3.5rem;
     text-align: left;
     margin-left: 3%;
   }
+  
   
   h2 {
     font-size: 2rem;
