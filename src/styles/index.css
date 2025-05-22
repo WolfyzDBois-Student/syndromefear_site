@@ -5,7 +5,7 @@
     align-items: center;
     padding: 5%;
     gap: 5%;
-    min-height: calc(100vh - 300px); /* Ajuste à la hauteur de la navbar */
+    min-height: calc(100vh - 300px); /* espace dispo sous la navbar */
   }
   
   .synopsis {
@@ -20,10 +20,12 @@
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.8;
+    color: inherit; /* hérite de body */
   }
   
   .download-button {
     margin-top: 20px;
+    color: inherit; /* hérite aussi */
   }
   
   .gallery {
@@ -41,13 +43,11 @@
     border-radius: 10px;
   }
   
-  /* Bande défilante horizontale */
   .gallery-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
   }
   
-  /* Chaque image occupe toute la largeur */
   .gallery-image {
     min-width: 100%;
     height: auto;
@@ -56,7 +56,7 @@
     object-fit: cover;
   }
   
-  /* Boutons de navigation */
+  /* Boutons de navigation galerie */
   .gallery-btn {
     position: absolute;
     top: 50%;

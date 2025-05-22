@@ -1,336 +1,335 @@
 @font-face {
-    font-family: 'MainFont';
-    src: url('/fonts/main.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'MainFont';
+  src: url('/fonts/main.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #ffffff;
+  color: #2b2b2b;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'MainFont', sans-serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+  text-align: left;
+  margin-left: 3%;
+}
+
+h2 {
+  color: #0f4c81;
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #005f99;
+  font-size: 1.1rem;
+}
+
+.navbar {
+  background-image: url('../img/syndromefear.png');
+  background-size: cover;
+  background-position: top;
+  padding: 10px 0;
+  top: 0;
+  width: 100%;
+  max-height: 300px;
+  z-index: 1000;
+  margin: 0;
+  position: relative;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.navbar-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #ffaa00;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.navbar-collapsed {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: max-height 0.3s ease;
+}
+
+.navbar-collapsed.open {
+  display: flex;
+}
+
+.navbar-collapsed .navbar-link {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.text {
+  margin: 0 10%;
+}
+
+.side {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.textblock {
+  margin-right: 10%;
+}
+
+.side-pic {
+  display: flex;
+  max-width: 33%;
+  border-radius: 10px;
+}
+
+.download-button,
+.download-button-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.download-button {
+  background-color: #0a8754;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.download-button:hover {
+  background-color: #066e46;
+  transform: translateY(-2px);
+}
+
+.download-button-coming-soon {
+  background-color: #aaaaaa;
+  color: white;
+  cursor: not-allowed;
+}
+
+.team-pic {
+  width: 50%;
+  display: block;
+  margin: 20px auto;
+}
+
+.member {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.member-name {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.member-description {
+  text-align: justify;
+}
+
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 0;
+  max-width: 600px;
+  border-left: 4px solid #0081a7;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 20px 20px 20px 40px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #0081a7;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: #fefefe;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: #0081a7;
+}
+
+.timeline-content .date {
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+table {
+  border-collapse: collapse;
+  width: auto;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 100px;
+}
+
+th,
+td {
+  border: 1px solid #bbb;
+  padding: 8px;
+}
+
+th {
+  background-color: #e0e0e0;
+  color: #222;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tr:hover {
+  background-color: #e2f1ff;
+}
+
+iframe {
+  align-items: center;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
   body {
-    background-color: #ffffff;
-    color: #2b2b2b;
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    line-height: 1.6;
-    font-family: 'MainFont', sans-serif;
+    font-size: 16px;
+    padding: 0 5%;
   }
-  
+
   h1 {
-    font-size: 3.5rem;
-    text-align: left;
-    margin-left: 3%;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-left: 0;
   }
-  
+
   h2 {
-    color: #0f4c81;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
   }
-  
-  a {
-    text-decoration: none;
-    color: #005f99;
-    font-size: 1.1rem;
-  }
-  
-  .navbar {
-    background-image: url('../img/syndromefear.png');
-    background-size: cover;
-    background-position: top;
-    padding: 10px 0;
-    top: 0;
-    width: 100%;
-    max-height: 300px;
-    z-index: 1000;
-    margin: 0;
-    position: relative;
-  }
-  
+
   .navbar-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    margin-top: 10px;
-  }
-  
-  .navbar-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-  }
-  
-  .navbar-link:hover {
-    color: #ffaa00;
-  }
-  
-  .nav-toggle {
     display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 1001;
-    cursor: pointer;
   }
-  
+
+  .nav-toggle {
+    display: block;
+  }
+
   .navbar-collapsed {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 1rem;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: max-height 0.3s ease;
   }
-  
+
   .navbar-collapsed.open {
     display: flex;
   }
-  
-  .navbar-collapsed .navbar-link {
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
-  }
-  
+
   .text {
-    margin: 0 10%;
+    margin: 0 5%;
+    padding-top: 250px;
   }
-  
+
   .side {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .textblock {
-    margin-right: 10%;
-  }
-  
+
   .side-pic {
-    display: flex;
-    max-width: 33%;
-    border-radius: 10px;
-  }
-  
-  .download-button,
-  .download-button-coming-soon {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    text-decoration: none;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    justify-content: center;
-  }
-  
-  .download-button {
-    background-color: #0a8754;
-    color: white;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .download-button:hover {
-    background-color: #066e46;
-    transform: translateY(-2px);
-  }
-  
-  .download-button-coming-soon {
-    background-color: #aaaaaa;
-    color: white;
-    cursor: not-allowed;
-  }
-  
-  .team-pic {
-    width: 50%;
-    display: block;
-    margin: 20px auto;
-  }
-  
-  .member {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-  }
-  
-  .member-name {
-    color: #2c3e50;
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .member-description {
-    text-align: justify;
-  }
-  
-  .timeline {
-    position: relative;
-    margin: 50px auto;
-    padding: 0;
-    max-width: 600px;
-    border-left: 4px solid #0081a7;
-  }
-  
-  .timeline-item {
-    position: relative;
-    padding: 20px 20px 20px 40px;
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease-out forwards;
-  }
-  
-  .timeline-marker {
-    position: absolute;
-    left: -10px;
-    top: 20px;
-    width: 20px;
-    height: 20px;
-    background-color: #0081a7;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    z-index: 1;
-  }
-  
-  .timeline-content {
-    background: #fefefe;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .timeline-content h3 {
-    margin-top: 0;
-    font-size: 1.75rem;
-    color: #0081a7;
-  }
-  
-  .timeline-content .date {
-    display: block;
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: auto;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-    margin-bottom: 100px;
-  }
-  
-  th,
-  td {
-    border: 1px solid #bbb;
-    padding: 8px;
-  }
-  
-  th {
-    background-color: #e0e0e0;
-    color: #222;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f8f8f8;
-  }
-  
-  tr:hover {
-    background-color: #e2f1ff;
-  }
-  
-  iframe {
-    align-items: center;
-    display: block;
+    max-width: 80%;
     margin: 0 auto;
   }
-  
-  @media screen and (max-width: 768px) {
-    body {
-      font-size: 16px;
-      padding: 0 5%;
-    }
-  
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-left: 0;
-    }
-  
-    h2 {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-  
-    .navbar-menu {
-      display: none;
-    }
-  
-    .nav-toggle {
-      display: block;
-    }
-  
-    .navbar-collapsed {
-      display: none;
-    }
-  
-    .navbar-collapsed.open {
-      display: flex;
-    }
-  
-    .text {
-      margin: 0 5%;
-      padding-top: 250px;
-    }
-  
-    .side {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .side-pic {
-      max-width: 80%;
-      margin: 0 auto;
-    }
-  
-    .team-pic {
-      width: 80%;
-    }
-  
-    .timeline {
-      max-width: 90%;
-      margin: 30px auto;
-    }
-  
-    .timeline-marker {
-      width: 15px;
-      height: 15px;
-      left: -8px;
-    }
-  
-    table {
-      font-size: 16px;
-      width: 100%;
-    }
+
+  .team-pic {
+    width: 80%;
   }
-  
+
+  .timeline {
+    max-width: 90%;
+    margin: 30px auto;
+  }
+
+  .timeline-marker {
+    width: 15px;
+    height: 15px;
+    left: -8px;
+  }
+
+  table {
+    font-size: 16px;
+    width: 100%;
+  }
+}
