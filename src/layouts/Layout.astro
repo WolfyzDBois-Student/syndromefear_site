@@ -19,15 +19,9 @@ const basePath =
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="icon" href={`${basePath}favicon.gif`} />
-
-    <script is:inline>
-      const saved = localStorage.getItem("daltonien-mode");
-      const isDaltonien = saved === "1";
-      const base = window.location.pathname.includes("/team") || window.location.pathname.includes("/project") || window.location.pathname.includes("/downloads") || window.location.pathname.includes("/links") || window.location.pathname.includes("/bug_report") ? "../" : "./";
-      const styleHref = isDaltonien ? `${base}styles/daltonien.css` : `${base}styles/style.css`;
-      document.write(`<link id="theme-style" rel="stylesheet" href="${styleHref}">`);
-    </script>
     
+    <!-- Style par défaut -->
+    <link id="theme-style" rel="stylesheet" href={`${basePath}styles/style.css`} />
   </head>
 
   <body class={isIndex ? "index-page" : ""}>
