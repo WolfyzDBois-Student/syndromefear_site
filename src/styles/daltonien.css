@@ -1,6 +1,14 @@
 @font-face {
   font-family: 'MainFont';
-  src: url('/fonts/main.ttf') format('truetype');
+  src: url('../fonts/main.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitleFont';
+  /* src: url('https://raw.githubusercontent.com/WolfyzDBois-Student/syndromefear_site/main/public/title.ttf') format('truetype'); */
+  src: url('../fonts/title.ttf')
   font-weight: normal;
   font-style: normal;
 }
