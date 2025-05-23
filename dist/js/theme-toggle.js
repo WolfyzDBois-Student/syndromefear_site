@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("daltonien-mode");
   const isDaltonien = saved === "1";
 
-  // Appliquer le thème dès le chargement
   themeLink.setAttribute("href", `${basePath}styles/${isDaltonien ? "daltonien" : "style"}.css`);
 
   toggleButtons.forEach(btn => {
