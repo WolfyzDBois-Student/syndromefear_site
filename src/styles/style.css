@@ -1,17 +1,12 @@
 @font-face {
     font-family: 'MainFont';
-    src: url('/fonts/main.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
+    src: url('/syndromefear_site/fonts/main.ttf') format('truetype');
+  }
+  
+  @font-face {
     font-family: 'TitleFont';
-    src: url('/fonts/title.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
+    src: url('/syndromefear_site/fonts/title.ttf') format('truetype');
+  }
 
 
 body {
