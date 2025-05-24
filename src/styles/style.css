@@ -1,13 +1,17 @@
 @font-face {
     font-family: 'MainFont';
-    src: url('/syndromefear_site/fonts/main.ttf') format('truetype');
+    src: url('https://wolfyzdbois-student.github.io/syndromefear_site/fonts/main.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
   }
   
   @font-face {
     font-family: 'TitleFont';
-    src: url('/syndromefear_site/fonts/title.ttf') format('truetype');
+    src: url('https://wolfyzdbois-student.github.io/syndromefear_site/fonts/title.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
   }
-
+  
 
 body {
     background-color: #000c1a;
