@@ -42,7 +42,7 @@ a {
 }
 
 .navbar {
-    background-image: url('https://syndromefear.wolfyz.fr/public/img/syndromefear.png');
+    background-image: url('./img/syndromefear.png');
     background-size: cover;
     background-position: top;
     padding: 10px 0;
