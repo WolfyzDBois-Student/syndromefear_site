@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'MainFont';
-    src: url('/syndromefear_site/fonts/main.ttf') format('truetype');
-  }
-  
-  @font-face {
+    src: url(https://syndromefear.wolfyz.fr/public/fonts/main.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'TitleFont';
-    src: url('/syndromefear_site/fonts/title.ttf') format('truetype');
-  }
+    src: url(https://syndromefear.wolfyz.fr/public/fonts/title.ttf') format('truetype');
+}
 
 
 body {
@@ -42,7 +42,7 @@ a {
 }
 
 .navbar {
-    background-image: url('../img/syndromefear.png');
+    background-image: url('https://syndromefear.wolfyz.fr/public/img/syndromefear.png');
     background-size: cover;
     background-position: top;
     padding: 10px 0;
@@ -255,7 +255,6 @@ iframe {
     margin: 0 auto;
 }
 
-/* Responsive mobile */
 @media screen and (max-width: 768px) {
     body {
         font-size: 16px;

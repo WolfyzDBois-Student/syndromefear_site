@@ -7,9 +7,7 @@
 
 @font-face {
   font-family: 'TitleFont';
-  /* src: url('https://raw.githubusercontent.com/WolfyzDBois-Student/syndromefear_site/main/public/title.ttf') format('truetype'); */
-  src: url('../fonts/title.ttf')
-  font-weight: normal;
+  src: url('../fonts/title.ttf') font-weight: normal;
   font-style: normal;
 }
 
@@ -45,7 +43,7 @@ a {
 }
 
 .navbar {
-  background-image: url('../img/syndromefear.png');
+  background-image: url('https://syndromefear.wolfyz.fr/public/img/syndromefear.png');
   background-size: cover;
   background-position: top;
   padding: 10px 0;

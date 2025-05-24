@@ -23,8 +23,6 @@
     color: inherit;
 }
 
-
-
 .gallery {
     flex: 1;
     display: flex;
@@ -80,7 +78,6 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Responsive mobile */
 @media screen and (max-width: 768px) {
     .index-container {
         flex-direction: column;

@@ -1,10 +1,7 @@
 ---
 const { basePath } = Astro.props;
-
-/* const navbarStyle = `background-image: url('${basePath}img/syndromefear.png');`; */
 ---
 
-<!-- <nav class="navbar"style={navbarStyle}> -->
 <nav class="navbar">
   <button class="nav-toggle" aria-label="Ouvrir le menu">☰ Menu</button>
   <h1>Syndrome Fear</h1>
@@ -36,7 +33,9 @@ const { basePath } = Astro.props;
         >Bug Report</a
       >
     </li>
-    <li><button class="daltonien-toggle navbar-link">Mode Accessible</button></li>
+    <li>
+      <button class="daltonien-toggle navbar-link">Mode Accessible</button>
+    </li>
   </ul>
 
   <ul class="navbar-collapsed">
